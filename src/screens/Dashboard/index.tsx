@@ -1,17 +1,17 @@
 import React from "react";
 
-
-
+import { HighlightCard } from "../../components/HighlightCard";
 import {
   Container,
   Header,
-  UserWrapper,
+  HighlightCards,
+  Icon,
   Photo,
   User,
   UserGretting,
   UserInfo,
   UserName,
-  Icon,
+  UserWrapper,
 } from "./styles";
 
 export function Dashboard() {
@@ -19,17 +19,22 @@ export function Dashboard() {
     <Container>
       <Header>
         <UserWrapper>
-        <UserInfo>
-          <Photo source={{ uri: "https://github.com/Gabr1elSouza.png" }} />
-          <User>
-            <UserGretting>Olá,</UserGretting>
-            <UserName>Gabriel</UserName>
-          </User>
-        </UserInfo>
-        <Icon name="power"/>
-
+          <UserInfo>
+            <Photo source={{ uri: "https://github.com/Gabr1elSouza.png" }} />
+            <User>
+              <UserGretting>Olá,</UserGretting>
+              <UserName>Gabriel</UserName>
+            </User>
+          </UserInfo>
+          <Icon name="power" />
         </UserWrapper>
       </Header>
+
+      <HighlightCards>
+        <HighlightCard />
+        <HighlightCard />
+        <HighlightCard />
+      </HighlightCards>
     </Container>
   );
 }
