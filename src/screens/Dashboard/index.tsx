@@ -53,7 +53,7 @@ export function Dashboard() {
       category: { name: "Casa", icon: "shopping-bag" },
 
       date: "27/03/2025",
-    },\
+    },
     
   ];
   return (

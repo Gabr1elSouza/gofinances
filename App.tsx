@@ -1,6 +1,8 @@
 import * as SplashScreen from "expo-splash-screen";
 import React, { useCallback } from "react";
+import { Register } from "./src/screens/Register";
 import { Dashboard } from "./src/screens/Dashboard";
+import { CategorySelect } from "./src/screens/CategorySelect";
 
 import {
   Poppins_400Regular,
@@ -27,7 +29,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Dashboard />
+      <CategorySelect />
     </ThemeProvider>
   );
 }
