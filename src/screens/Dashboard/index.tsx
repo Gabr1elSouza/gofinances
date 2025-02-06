@@ -19,6 +19,7 @@ import {
   UserInfo,
   UserName,
   UserWrapper,
+  LogoutButton
 } from "./styles";
 
 export interface DataListProps extends TransactionCardProps {
@@ -54,7 +55,6 @@ export function Dashboard() {
 
       date: "27/03/2025",
     },
-    
   ];
   return (
     <Container>
@@ -67,7 +67,9 @@ export function Dashboard() {
               <UserName>Gabriel</UserName>
             </User>
           </UserInfo>
-          <Icon name="power" />
+          <LogoutButton onPress={()=>{}}>
+            <Icon name="power" />
+          </LogoutButton>
         </UserWrapper>
       </Header>
 

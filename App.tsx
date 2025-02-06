@@ -1,8 +1,5 @@
 import * as SplashScreen from "expo-splash-screen";
 import React, { useCallback } from "react";
-import { Register } from "./src/screens/Register";
-import { Dashboard } from "./src/screens/Dashboard";
-import { CategorySelect } from "./src/screens/CategorySelect";
 
 import {
   Poppins_400Regular,
@@ -11,8 +8,11 @@ import {
   useFonts,
 } from "@expo-google-fonts/poppins";
 
+import { NavigationContainer } from "@react-navigation/native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { ThemeProvider } from "styled-components/native";
 import theme from "./src/global/styles/theme";
+import { AppRoutes } from "./src/routes/app.routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,7 +29,11 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CategorySelect />
+      <NavigationContainer>
+        <GestureHandlerRootView>
+          <AppRoutes />
+        </GestureHandlerRootView>
+      </NavigationContainer>
     </ThemeProvider>
   );
 }

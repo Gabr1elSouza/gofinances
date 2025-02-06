@@ -5,6 +5,8 @@ import styled from "styled-components/native";
 
 import { Feather } from "@expo/vector-icons";
 
+import { BorderlessButton} from 'react-native-gesture-handler'
+
 import { DataListProps } from ".";
 
 export const Container = styled.View`
@@ -64,6 +66,8 @@ export const Icon = styled(Feather)`
   font-size: ${RFValue(24)}PX;
 `;
 
+export const LogoutButton = styled(BorderlessButton)``
+
 export const HighlightCards = styled.ScrollView.attrs({
   horizontal: true,
   showsHorizontalScrollIndicator: false,
@@ -93,3 +97,5 @@ export const TransactionsList = styled(
   showsVerticalScrollIndicator: false,
   contentContainerStyle: { paddingBottom: 10 },
 })``;
+
+
