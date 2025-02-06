@@ -1,4 +1,6 @@
 import * as SplashScreen from "expo-splash-screen";
+import "intl";
+import "intl/locale-data/jsonp/pt-BR";
 import React, { useCallback } from "react";
 
 import {
