@@ -12,8 +12,12 @@ import { Dashboard } from "../screens/Dashboard";
 import { Register } from "../screens/Register";
 import { Resume } from "../screens/Resume";
 
+import { SignIn} from '../screens/SignIn'
+import { useUser } from "@clerk/clerk-expo";
+
 export function AppRoutes() {
   const theme = useTheme();
+  const {user} = useUser()
 
   return (
     <Navigator
@@ -24,11 +28,11 @@ export function AppRoutes() {
         tabBarLabelPosition: "beside-icon",
         tabBarStyle: {
           height: 88,
-          paddingVertical: Platform.OS === "ios" ? "20" : 0,
+          paddingVertical: Platform.OS === "ios" ? 20 : 0,
         },
       }}
     >
-      <Screen
+      {user ? (<><Screen
         name="Listagem"
         component={Dashboard}
         options={{
@@ -58,7 +62,16 @@ export function AppRoutes() {
             <MaterialIcons name="pie-chart" size={size} color={color} />
           ),
         }}
+      /></>):(
+        <Screen
+        name="Sign"
+        component={SignIn}
+        options={{
+          tabBarStyle:{display:'none'},
+        }}
       />
+      )}
+      
     </Navigator>
   );
 }

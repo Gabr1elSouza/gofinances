@@ -23,6 +23,7 @@ import {
 import { useFocusEffect } from "@react-navigation/native";
 import { ActivityIndicator } from "react-native";
 import { useTheme } from "styled-components";
+import { useUser } from "@clerk/clerk-expo";
 
 interface TransactionData {
   id: string;
@@ -58,9 +59,10 @@ export function Resume() {
       setSelectedDate(subMonths(selectedDate, 1));
     }
   }
+  const {user} = useUser()
 
   async function loadData() {
-    const dataKey = "@gofinance:transactions";
+    const dataKey = `@gofinance:transactions_user:${user?.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
 

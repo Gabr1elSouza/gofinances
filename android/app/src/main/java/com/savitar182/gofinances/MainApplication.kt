@@ -1,4 +1,4 @@
-package com.gofinances
+package com.savitar182.gofinances
 
 import android.app.Application
 import android.content.res.Configuration

@@ -2,9 +2,27 @@
   "expo": {
     "name": "gofinances",
     "slug": "gofinances",
+    "scheme": "gofinances",
     "version": "1.0.0",
     "plugins": [
-      "expo-font"
-    ]
+      [
+        "expo-font"
+      ],
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.652447546002-osd3ij64ase5rgr71k3relk61d3gnu1q.apps.googleusercontent.com"
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "android": {
+      "package": "com.savitar182.gofinances"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "00262c61-f694-48e1-8999-278bf3db84c3"
+      }
+    }
   }
 }
